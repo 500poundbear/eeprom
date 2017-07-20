@@ -8,8 +8,6 @@ int WE = 12; // Write enable LOW to activate
 
 int op[] = {2,3,4,5,6,7,8,9};
 
-#define CLKINTERVAL 200
-
 void setup() {
 
   Serial.begin(57600); // Takes up pin 0 and pin 1 for serial communication. cool.
@@ -24,9 +22,9 @@ void setup() {
 
   digitalWrite(WE, HIGH);
 
-  // VALUES TO SEND
+  // Change your values here
   for (uint16_t pos = 0; pos < (1 << 4); pos++) {
-    
+    write(pos, pos);
   }
 
   // Signal done
